@@ -13,8 +13,11 @@ export const useProductoStore = defineStore('producto', () => {
   const productos = ref<Producto[]>([])
 
   const totalInventario = computed(() =>
-    productos.value.reduce((total, producto) =>
-      total + producto.precio * producto.stock, 0)
+    productos.value.reduce(
+      (total, producto) =>
+        total + producto.precio * producto.stock,
+      0
+    )
   )
 
   function agregarProducto(producto: Producto) {
